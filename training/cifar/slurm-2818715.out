@@ -1,0 +1,146 @@
+[2024-08-28 12:07:01,872] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-08-28 12:07:05,013] [WARNING] [runner.py:212:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
+Detected VISIBLE_DEVICES=0,1 but ignoring it because one or several of --include/--exclude/--num_gpus/--num_nodes cl args were used. If you want to use CUDA_VISIBLE_DEVICES don't pass any of these arguments to deepspeed.
+[2024-08-28 12:07:05,014] [INFO] [runner.py:585:main] cmd = /HOME/scz1075/.conda/envs/deepspeed/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMCwgMV19 --master_addr=127.0.0.1 --master_port=29500 --enable_each_rank_log=None cifar10_deepspeed.py --log-interval 100 --deepspeed --moe --ep-world-size 2 --num-experts 2 --top-k 1 --noisy-gate-policy RSample --moe-param-group
+[2024-08-28 12:07:07,044] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-08-28 12:07:09,180] [INFO] [launch.py:146:main] WORLD INFO DICT: {'localhost': [0, 1]}
+[2024-08-28 12:07:09,180] [INFO] [launch.py:152:main] nnodes=1, num_local_procs=2, node_rank=0
+[2024-08-28 12:07:09,180] [INFO] [launch.py:163:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0, 1]})
+[2024-08-28 12:07:09,181] [INFO] [launch.py:164:main] dist_world_size=2
+[2024-08-28 12:07:09,181] [INFO] [launch.py:168:main] Setting CUDA_VISIBLE_DEVICES=0,1
+[2024-08-28 12:07:09,188] [INFO] [launch.py:256:main] process 43808 spawned with command: ['/HOME/scz1075/.conda/envs/deepspeed/bin/python', '-u', 'cifar10_deepspeed.py', '--local_rank=0', '--log-interval', '100', '--deepspeed', '--moe', '--ep-world-size', '2', '--num-experts', '2', '--top-k', '1', '--noisy-gate-policy', 'RSample', '--moe-param-group']
+[2024-08-28 12:07:09,193] [INFO] [launch.py:256:main] process 43815 spawned with command: ['/HOME/scz1075/.conda/envs/deepspeed/bin/python', '-u', 'cifar10_deepspeed.py', '--local_rank=1', '--log-interval', '100', '--deepspeed', '--moe', '--ep-world-size', '2', '--num-experts', '2', '--top-k', '1', '--noisy-gate-policy', 'RSample', '--moe-param-group']
+[2024-08-28 12:07:11,265] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-08-28 12:07:11,342] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-08-28 12:07:19,126] [INFO] [comm.py:652:init_distributed] cdb=None
+[2024-08-28 12:07:19,126] [INFO] [comm.py:683:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+[2024-08-28 12:07:19,126] [INFO] [comm.py:652:init_distributed] cdb=None
+Files already downloaded and verified
+Files already downloaded and verified
+[2024-08-28 12:07:22,725] [INFO] [logging.py:96:log_dist] [Rank 0] Creating MoE layer with num_experts: 2 | num_local_experts: 1 | expert_parallel_size: 2
+[2024-08-28 12:07:22,807] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed info: version=0.15.0, git-hash=unknown, git-branch=unknown
+[2024-08-28 12:07:22,807] [INFO] [config.py:733:__init__] Config mesh_device None world_size = 2
+[2024-08-28 12:07:22,807] [WARNING] [config_utils.py:70:_process_deprecated_field] Config parameter cpu_offload is deprecated use offload_optimizer instead
+No existing process group found, creating a new group named: ep_size_2
+[2024-08-28 12:07:22,836] [INFO] [logging.py:96:log_dist] [Rank 0] Creating expert and data parallel groups with size 2
+[2024-08-28 12:07:22,837] [INFO] [logging.py:96:log_dist] [Rank 0] Creating expert data parallel process group named ep_size_2 with ranks: [0]
+[2024-08-28 12:07:22,837] [INFO] [logging.py:96:log_dist] [Rank 0] Creating expert data parallel process group named ep_size_2 with ranks: [1]
+[2024-08-28 12:07:22,837] [INFO] [logging.py:96:log_dist] [Rank 0] creating expert parallel process group named ep_size_2 with ranks: [0, 1]
+Files already downloaded and verified
+Files already downloaded and verified
+[2024-08-28 12:07:24,088] [INFO] [config.py:733:__init__] Config mesh_device None world_size = 2
+[2024-08-28 12:07:24,088] [WARNING] [config_utils.py:70:_process_deprecated_field] Config parameter cpu_offload is deprecated use offload_optimizer instead
+No existing process group found, creating a new group named: ep_size_2
+[2024-08-28 12:07:24,204] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Flops Profiler Enabled: False
+Using /data/run01/scz1075/.cache/torch_extensions/py38_cu118 as PyTorch extensions root...Using /data/run01/scz1075/.cache/torch_extensions/py38_cu118 as PyTorch extensions root...
+
+Creating extension directory /data/run01/scz1075/.cache/torch_extensions/py38_cu118/fused_adam...Creating extension directory /data/run01/scz1075/.cache/torch_extensions/py38_cu118/fused_adam...
+
+Detected CUDA files, patching ldflags
+Emitting ninja build file /data/run01/scz1075/.cache/torch_extensions/py38_cu118/fused_adam/build.ninja...
+/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/utils/cpp_extension.py:1965: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+  warnings.warn(
+Building extension module fused_adam...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/3] /data/apps/cuda/11.8/bin/nvcc --generate-dependencies-with-compile --dependency-output multi_tensor_adam.cuda.o.d -DTORCH_EXTENSION_NAME=fused_adam -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -I/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/ops/csrc/includes -I/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/ops/csrc/adam -isystem /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include -isystem /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -isystem /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/TH -isystem /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/THC -isystem /data/apps/cuda/11.8/include -isystem /HOME/scz1075/.conda/envs/deepspeed/include/python3.8 -D_GLIBCXX_USE_CXX11_ABI=0 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_86,code=compute_86 -gencode=arch=compute_86,code=sm_86 --compiler-options '-fPIC' -O3 -DVERSION_GE_1_1 -DVERSION_GE_1_3 -DVERSION_GE_1_5 -lineinfo --use_fast_math -gencode=arch=compute_86,code=sm_86 -gencode=arch=compute_86,code=compute_86 -DBF16_AVAILABLE -U__CUDA_NO_BFLOAT16_OPERATORS__ -U__CUDA_NO_BFLOAT162_OPERATORS__ -U__CUDA_NO_BFLOAT16_CONVERSIONS__ -std=c++17 -c /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/ops/csrc/adam/multi_tensor_adam.cu -o multi_tensor_adam.cuda.o 
+FAILED: multi_tensor_adam.cuda.o 
+/data/apps/cuda/11.8/bin/nvcc --generate-dependencies-with-compile --dependency-output multi_tensor_adam.cuda.o.d -DTORCH_EXTENSION_NAME=fused_adam -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -I/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/ops/csrc/includes -I/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/ops/csrc/adam -isystem /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include -isystem /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -isystem /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/TH -isystem /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/THC -isystem /data/apps/cuda/11.8/include -isystem /HOME/scz1075/.conda/envs/deepspeed/include/python3.8 -D_GLIBCXX_USE_CXX11_ABI=0 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_86,code=compute_86 -gencode=arch=compute_86,code=sm_86 --compiler-options '-fPIC' -O3 -DVERSION_GE_1_1 -DVERSION_GE_1_3 -DVERSION_GE_1_5 -lineinfo --use_fast_math -gencode=arch=compute_86,code=sm_86 -gencode=arch=compute_86,code=compute_86 -DBF16_AVAILABLE -U__CUDA_NO_BFLOAT16_OPERATORS__ -U__CUDA_NO_BFLOAT162_OPERATORS__ -U__CUDA_NO_BFLOAT16_CONVERSIONS__ -std=c++17 -c /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/ops/csrc/adam/multi_tensor_adam.cu -o multi_tensor_adam.cuda.o 
+In file included from /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/c10/util/CallOnce.h:8:0,
+                 from /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/ATen/Context.h:22,
+                 from /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/ATen/ATen.h:7,
+                 from /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/ops/csrc/adam/multi_tensor_adam.cu:11:
+/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/c10/util/C++17.h:13:2: error: #error "You're trying to build PyTorch with a too old version of GCC. We need GCC 9 or later."
+ #error \
+  ^~~~~
+[2/3] c++ -MMD -MF fused_adam_frontend.o.d -DTORCH_EXTENSION_NAME=fused_adam -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -I/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/ops/csrc/includes -I/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/ops/csrc/adam -isystem /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include -isystem /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -isystem /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/TH -isystem /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/THC -isystem /data/apps/cuda/11.8/include -isystem /HOME/scz1075/.conda/envs/deepspeed/include/python3.8 -D_GLIBCXX_USE_CXX11_ABI=0 -fPIC -std=c++17 -O3 -std=c++17 -g -Wno-reorder -DVERSION_GE_1_1 -DVERSION_GE_1_3 -DVERSION_GE_1_5 -DBF16_AVAILABLE -c /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/ops/csrc/adam/fused_adam_frontend.cpp -o fused_adam_frontend.o 
+FAILED: fused_adam_frontend.o 
+c++ -MMD -MF fused_adam_frontend.o.d -DTORCH_EXTENSION_NAME=fused_adam -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -I/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/ops/csrc/includes -I/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/ops/csrc/adam -isystem /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include -isystem /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -isystem /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/TH -isystem /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/THC -isystem /data/apps/cuda/11.8/include -isystem /HOME/scz1075/.conda/envs/deepspeed/include/python3.8 -D_GLIBCXX_USE_CXX11_ABI=0 -fPIC -std=c++17 -O3 -std=c++17 -g -Wno-reorder -DVERSION_GE_1_1 -DVERSION_GE_1_3 -DVERSION_GE_1_5 -DBF16_AVAILABLE -c /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/ops/csrc/adam/fused_adam_frontend.cpp -o fused_adam_frontend.o 
+In file included from /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/ATen/core/TensorBase.h:14:0,
+                 from /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/ATen/core/TensorBody.h:38,
+                 from /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/ATen/core/Tensor.h:3,
+                 from /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/function_hook.h:3,
+                 from /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/cpp_hook.h:2,
+                 from /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/variable.h:6,
+                 from /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/autograd.h:3,
+                 from /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/torch/csrc/api/include/torch/autograd.h:3,
+                 from /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/torch/csrc/api/include/torch/all.h:7,
+                 from /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/torch/extension.h:5,
+                 from /HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/ops/csrc/adam/fused_adam_frontend.cpp:6:
+/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/include/c10/util/C++17.h:13:2: error: #error "You're trying to build PyTorch with a too old version of GCC. We need GCC 9 or later."
+ #error \
+  ^~~~~
+ninja: build stopped: subcommand failed.
+Loading extension module fused_adam...
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/utils/cpp_extension.py", line 2105, in _run_ninja_build
+[rank0]:     subprocess.run(
+[rank0]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/subprocess.py", line 516, in run
+[rank0]:     raise CalledProcessError(retcode, process.args,
+[rank0]: subprocess.CalledProcessError: Command '['ninja', '-v']' returned non-zero exit status 1.
+
+[rank0]: The above exception was the direct cause of the following exception:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "cifar10_deepspeed.py", line 399, in <module>
+[rank0]:     main(args)
+[rank0]:   File "cifar10_deepspeed.py", line 334, in main
+[rank0]:     model_engine, optimizer, trainloader, __ = deepspeed.initialize(
+[rank0]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/__init__.py", line 193, in initialize
+[rank0]:     engine = DeepSpeedEngine(args=args,
+[rank0]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/runtime/engine.py", line 313, in __init__
+[rank0]:     self._configure_optimizer(optimizer, model_parameters)
+[rank0]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/runtime/engine.py", line 1276, in _configure_optimizer
+[rank0]:     basic_optimizer = self._configure_basic_optimizer(model_parameters)
+[rank0]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/runtime/engine.py", line 1353, in _configure_basic_optimizer
+[rank0]:     optimizer = FusedAdam(
+[rank0]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/ops/adam/fused_adam.py", line 94, in __init__
+[rank0]:     fused_adam_cuda = FusedAdamBuilder().load()
+[rank0]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/ops/op_builder/builder.py", line 530, in load
+[rank0]:     return self.jit_load(verbose)
+[rank0]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/ops/op_builder/builder.py", line 577, in jit_load
+[rank0]:     op_module = load(name=self.name,
+[rank0]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/utils/cpp_extension.py", line 1312, in load
+[rank0]:     return _jit_compile(
+[rank0]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/utils/cpp_extension.py", line 1722, in _jit_compile
+[rank0]:     _write_ninja_file_and_build_library(
+[rank0]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/utils/cpp_extension.py", line 1834, in _write_ninja_file_and_build_library
+[rank0]:     _run_ninja_build(
+[rank0]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/utils/cpp_extension.py", line 2121, in _run_ninja_build
+[rank0]:     raise RuntimeError(message) from e
+[rank0]: RuntimeError: Error building extension 'fused_adam'
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "cifar10_deepspeed.py", line 399, in <module>
+[rank1]:     main(args)
+[rank1]:   File "cifar10_deepspeed.py", line 334, in main
+[rank1]:     model_engine, optimizer, trainloader, __ = deepspeed.initialize(
+[rank1]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/__init__.py", line 193, in initialize
+[rank1]:     engine = DeepSpeedEngine(args=args,
+[rank1]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/runtime/engine.py", line 313, in __init__
+[rank1]:     self._configure_optimizer(optimizer, model_parameters)
+[rank1]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/runtime/engine.py", line 1276, in _configure_optimizer
+[rank1]:     basic_optimizer = self._configure_basic_optimizer(model_parameters)
+[rank1]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/runtime/engine.py", line 1353, in _configure_basic_optimizer
+[rank1]:     optimizer = FusedAdam(
+[rank1]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/ops/adam/fused_adam.py", line 94, in __init__
+[rank1]:     fused_adam_cuda = FusedAdamBuilder().load()
+[rank1]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/ops/op_builder/builder.py", line 530, in load
+[rank1]:     return self.jit_load(verbose)
+[rank1]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/deepspeed/ops/op_builder/builder.py", line 577, in jit_load
+[rank1]:     op_module = load(name=self.name,
+[rank1]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/utils/cpp_extension.py", line 1312, in load
+[rank1]:     return _jit_compile(
+[rank1]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/utils/cpp_extension.py", line 1747, in _jit_compile
+[rank1]:     return _import_module_from_library(name, build_directory, is_python_module)
+[rank1]:   File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/utils/cpp_extension.py", line 2141, in _import_module_from_library
+[rank1]:     module = importlib.util.module_from_spec(spec)
+[rank1]:   File "<frozen importlib._bootstrap>", line 556, in module_from_spec
+[rank1]:   File "<frozen importlib._bootstrap_external>", line 1166, in create_module
+[rank1]:   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[rank1]: ImportError: /data/run01/scz1075/.cache/torch_extensions/py38_cu118/fused_adam/fused_adam.so: cannot open shared object file: No such file or directory
+[rank0]:[W828 12:08:25.900835825 ProcessGroupNCCL.cpp:1168] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+[rank1]:[W828 12:08:25.959607611 ProcessGroupNCCL.cpp:1168] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+[2024-08-28 12:08:28,277] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 43808
+[2024-08-28 12:08:28,277] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 43815
+[2024-08-28 12:08:28,278] [ERROR] [launch.py:325:sigkill_handler] ['/HOME/scz1075/.conda/envs/deepspeed/bin/python', '-u', 'cifar10_deepspeed.py', '--local_rank=1', '--log-interval', '100', '--deepspeed', '--moe', '--ep-world-size', '2', '--num-experts', '2', '--top-k', '1', '--noisy-gate-policy', 'RSample', '--moe-param-group'] exits with return code = 1

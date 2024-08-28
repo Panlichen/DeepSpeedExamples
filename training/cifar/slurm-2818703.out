@@ -1,0 +1,16 @@
+[2024-08-28 12:04:23,747] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+usage: deepspeed [-h] [-H HOSTFILE] [-i INCLUDE] [-e EXCLUDE]
+                 [--num_nodes NUM_NODES]
+                 [--min_elastic_nodes MIN_ELASTIC_NODES]
+                 [--max_elastic_nodes MAX_ELASTIC_NODES] [--num_gpus NUM_GPUS]
+                 [--master_port MASTER_PORT] [--master_addr MASTER_ADDR]
+                 [--node_rank NODE_RANK] [--launcher LAUNCHER]
+                 [--launcher_args LAUNCHER_ARGS] [--module] [--no_python]
+                 [--no_local_rank] [--no_ssh] [--no_ssh_check] [--force_multi]
+                 [--save_pid] [--enable_each_rank_log ENABLE_EACH_RANK_LOG]
+                 [--autotuning {tune,run}] [--elastic_training]
+                 [--bind_cores_to_rank] [--bind_core_list BIND_CORE_LIST]
+                 [--ssh_port SSH_PORT]
+                 user_script ...
+deepspeed: error: the following arguments are required: user_script, user_args
+/var/spool/slurmd/job2818703/slurm_script: line 20: cifar10_deepspeed.py: command not found

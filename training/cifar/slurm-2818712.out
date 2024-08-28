@@ -1,0 +1,15 @@
+[2024-08-28 12:06:33,973] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-08-28 12:06:36,952] [WARNING] [runner.py:212:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
+Detected VISIBLE_DEVICES=0 but ignoring it because one or several of --include/--exclude/--num_gpus/--num_nodes cl args were used. If you want to use CUDA_VISIBLE_DEVICES don't pass any of these arguments to deepspeed.
+[2024-08-28 12:06:36,952] [INFO] [runner.py:585:main] cmd = /HOME/scz1075/.conda/envs/deepspeed/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMCwgMV19 --master_addr=127.0.0.1 --master_port=29500 --enable_each_rank_log=None cifar10_deepspeed.py --log-interval 100 --deepspeed --moe --ep-world-size 2 --num-experts 2 --top-k 1 --noisy-gate-policy RSample --moe-param-group
+[2024-08-28 12:06:38,944] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-08-28 12:06:40,886] [INFO] [launch.py:146:main] WORLD INFO DICT: {'localhost': [0, 1]}
+[2024-08-28 12:06:40,886] [INFO] [launch.py:152:main] nnodes=1, num_local_procs=2, node_rank=0
+[2024-08-28 12:06:40,886] [INFO] [launch.py:163:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0, 1]})
+[2024-08-28 12:06:40,886] [INFO] [launch.py:164:main] dist_world_size=2
+[2024-08-28 12:06:40,886] [INFO] [launch.py:168:main] Setting CUDA_VISIBLE_DEVICES=0,1
+[2024-08-28 12:06:40,895] [INFO] [launch.py:256:main] process 19286 spawned with command: ['/HOME/scz1075/.conda/envs/deepspeed/bin/python', '-u', 'cifar10_deepspeed.py', '--local_rank=0', '--log-interval', '100', '--deepspeed', '--moe', '--ep-world-size', '2', '--num-experts', '2', '--top-k', '1', '--noisy-gate-policy', 'RSample', '--moe-param-group']
+[2024-08-28 12:06:40,901] [INFO] [launch.py:256:main] process 19287 spawned with command: ['/HOME/scz1075/.conda/envs/deepspeed/bin/python', '-u', 'cifar10_deepspeed.py', '--local_rank=1', '--log-interval', '100', '--deepspeed', '--moe', '--ep-world-size', '2', '--num-experts', '2', '--top-k', '1', '--noisy-gate-policy', 'RSample', '--moe-param-group']
+[2024-08-28 12:06:43,005] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-08-28 12:06:43,006] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+slurmstepd: error: *** JOB 2818712 ON g0018 CANCELLED AT 2024-08-28T12:06:46 ***
