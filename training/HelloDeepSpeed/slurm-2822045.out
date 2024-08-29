@@ -1,0 +1,64 @@
+[2024-08-29 10:12:41,546] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-08-29 10:12:45,519] [WARNING] [runner.py:212:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
+Detected VISIBLE_DEVICES=0,1: setting --include=localhost:0,1
+[2024-08-29 10:12:45,520] [INFO] [runner.py:585:main] cmd = /HOME/scz1075/.conda/envs/deepspeed/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMCwgMV19 --master_addr=127.0.0.1 --master_port=29500 --enable_each_rank_log=None train_bert_ds.py --checkpoint_dir experiment_deepspeed
+[2024-08-29 10:12:47,580] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-08-29 10:12:50,319] [INFO] [launch.py:146:main] WORLD INFO DICT: {'localhost': [0, 1]}
+[2024-08-29 10:12:50,319] [INFO] [launch.py:152:main] nnodes=1, num_local_procs=2, node_rank=0
+[2024-08-29 10:12:50,319] [INFO] [launch.py:163:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0, 1]})
+[2024-08-29 10:12:50,319] [INFO] [launch.py:164:main] dist_world_size=2
+[2024-08-29 10:12:50,319] [INFO] [launch.py:168:main] Setting CUDA_VISIBLE_DEVICES=0,1
+[2024-08-29 10:12:50,329] [INFO] [launch.py:256:main] process 28110 spawned with command: ['/HOME/scz1075/.conda/envs/deepspeed/bin/python', '-u', 'train_bert_ds.py', '--local_rank=0', '--checkpoint_dir', 'experiment_deepspeed']
+[2024-08-29 10:12:50,337] [INFO] [launch.py:256:main] process 28111 spawned with command: ['/HOME/scz1075/.conda/envs/deepspeed/bin/python', '-u', 'train_bert_ds.py', '--local_rank=1', '--checkpoint_dir', 'experiment_deepspeed']
+[2024-08-29 10:12:54,541] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-08-29 10:12:54,545] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+2024-08-29 10:12:58.690 | INFO     | __main__:log_dist:54 - [Rank 0] Creating Experiment Directory
+2024-08-29 10:12:59.944 | INFO     | __main__:log_dist:54 - [Rank 0] Experiment Directory created at experiment_deepspeed/bert_pretrain.2024.8.28.19.12.59.addjtvxg
+2024-08-29 10:12:59.948 | INFO     | __main__:log_dist:54 - [Rank 0] Creating Datasets
+Traceback (most recent call last):
+  File "train_bert_ds.py", line 863, in <module>
+    fire.Fire(train)
+  File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/fire/core.py", line 141, in Fire
+Traceback (most recent call last):
+  File "train_bert_ds.py", line 863, in <module>
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+  File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/fire/core.py", line 466, in _Fire
+    fire.Fire(train)
+  File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/fire/core.py", line 141, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+  File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/fire/core.py", line 466, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+  File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/fire/core.py", line 681, in _CallAndUpdateTrace
+    component, remaining_args = _CallAndUpdateTrace(
+  File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/fire/core.py", line 681, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+  File "train_bert_ds.py", line 757, in train
+    component = fn(*varargs, **kwargs)
+  File "train_bert_ds.py", line 757, in train
+    data_iterator = create_data_iterator(
+  File "train_bert_ds.py", line 267, in create_data_iterator
+    wikitext_dataset = datasets.load_dataset("wikitext",
+  File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/datasets/load.py", line 2606, in load_dataset
+    data_iterator = create_data_iterator(
+  File "train_bert_ds.py", line 267, in create_data_iterator
+    wikitext_dataset = datasets.load_dataset("wikitext",
+  File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/datasets/load.py", line 2606, in load_dataset
+    builder_instance = load_dataset_builder(
+  File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/datasets/load.py", line 2277, in load_dataset_builder
+    builder_instance = load_dataset_builder(
+  File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/datasets/load.py", line 2277, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+  File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/datasets/load.py", line 1923, in dataset_module_factory
+    dataset_module = dataset_module_factory(
+  File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/datasets/load.py", line 1923, in dataset_module_factory
+    raise e1 from None
+  File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/datasets/load.py", line 1854, in dataset_module_factory
+    raise e1 from None
+  File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/datasets/load.py", line 1854, in dataset_module_factory
+    raise ConnectionError(f"Couldn't reach '{path}' on the Hub ({e.__class__.__name__})") from e
+ConnectionError: Couldn't reach 'wikitext' on the Hub (ConnectionError)
+    raise ConnectionError(f"Couldn't reach '{path}' on the Hub ({e.__class__.__name__})") from e
+ConnectionError: Couldn't reach 'wikitext' on the Hub (ConnectionError)
+[2024-08-29 10:13:10,357] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 28110
+[2024-08-29 10:13:10,357] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 28111
+[2024-08-29 10:13:10,357] [ERROR] [launch.py:325:sigkill_handler] ['/HOME/scz1075/.conda/envs/deepspeed/bin/python', '-u', 'train_bert_ds.py', '--local_rank=1', '--checkpoint_dir', 'experiment_deepspeed'] exits with return code = 1

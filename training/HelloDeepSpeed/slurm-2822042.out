@@ -1,0 +1,29 @@
+[2024-08-29 10:11:02,027] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-08-29 10:11:08,876] [WARNING] [runner.py:212:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
+Detected VISIBLE_DEVICES=0,1 but ignoring it because one or several of --include/--exclude/--num_gpus/--num_nodes cl args were used. If you want to use CUDA_VISIBLE_DEVICES don't pass any of these arguments to deepspeed.
+[2024-08-29 10:11:08,876] [INFO] [runner.py:585:main] cmd = /HOME/scz1075/.conda/envs/deepspeed/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMCwgMV19 --master_addr=127.0.0.1 --master_port=29500 --enable_each_rank_log=None train_bert_ds.py --checkpoint_dir experiment_deepspeed
+[2024-08-29 10:11:10,939] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-08-29 10:11:13,620] [INFO] [launch.py:146:main] WORLD INFO DICT: {'localhost': [0, 1]}
+[2024-08-29 10:11:13,620] [INFO] [launch.py:152:main] nnodes=1, num_local_procs=2, node_rank=0
+[2024-08-29 10:11:13,620] [INFO] [launch.py:163:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0, 1]})
+[2024-08-29 10:11:13,620] [INFO] [launch.py:164:main] dist_world_size=2
+[2024-08-29 10:11:13,620] [INFO] [launch.py:168:main] Setting CUDA_VISIBLE_DEVICES=0,1
+[2024-08-29 10:11:13,629] [INFO] [launch.py:256:main] process 26639 spawned with command: ['/HOME/scz1075/.conda/envs/deepspeed/bin/python', '-u', 'train_bert_ds.py', '--local_rank=0', '--checkpoint_dir', 'experiment_deepspeed']
+[2024-08-29 10:11:13,637] [INFO] [launch.py:256:main] process 26640 spawned with command: ['/HOME/scz1075/.conda/envs/deepspeed/bin/python', '-u', 'train_bert_ds.py', '--local_rank=1', '--checkpoint_dir', 'experiment_deepspeed']
+[2024-08-29 10:11:19,155] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-08-29 10:11:19,166] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Traceback (most recent call last):
+  File "train_bert_ds.py", line 26, in <module>
+    from torch.utils.tensorboard import SummaryWriter
+  File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/utils/tensorboard/__init__.py", line 1, in <module>
+Traceback (most recent call last):
+  File "train_bert_ds.py", line 26, in <module>
+    from torch.utils.tensorboard import SummaryWriter
+  File "/HOME/scz1075/.conda/envs/deepspeed/lib/python3.8/site-packages/torch/utils/tensorboard/__init__.py", line 1, in <module>
+    import tensorboard
+ModuleNotFoundError: No module named 'tensorboard'
+    import tensorboard
+ModuleNotFoundError: No module named 'tensorboard'
+[2024-08-29 10:11:22,646] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 26639
+[2024-08-29 10:11:22,647] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 26640
+[2024-08-29 10:11:22,647] [ERROR] [launch.py:325:sigkill_handler] ['/HOME/scz1075/.conda/envs/deepspeed/bin/python', '-u', 'train_bert_ds.py', '--local_rank=1', '--checkpoint_dir', 'experiment_deepspeed'] exits with return code = 1

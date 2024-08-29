@@ -264,9 +264,7 @@ def create_data_iterator(
             be able to continuously generate samples
 
     """
-    wikitext_dataset = datasets.load_dataset("wikitext",
-                                             "wikitext-2-v1",
-                                             split="train")
+    wikitext_dataset = datasets.load_dataset("wikitext", "wikitext-2-v1", split="train")
     wikitext_dataset = wikitext_dataset.filter(
         lambda record: record["text"] != "").map(
             lambda record: {"text": record["text"].rstrip("\n")})
